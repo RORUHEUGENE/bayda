@@ -4,7 +4,7 @@ import java.util.Arrays;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {68, 44, 90, 81, 15, 34};
+        int[] arr = {90, 90, 50, 50, 50, 50, 90, 90};
 
         System.out.printf(Arrays.toString(arr));
         Arrays.sort(arr);
@@ -13,22 +13,19 @@ public class Main {
         System.out.println(m);
 
     }
-
     public static int bott(int[] arr) {
         int i = 0;
         int count = 0;
         int j = arr.length;
-        while (j >= i) {
-            for (j = arr.length - 1; j >= 0; j--) {
-                if ((arr[i] + arr[j]) <= 135) {
-                    i++;
-                    count++;
-                } else if (arr[j] <= 135) {
-                    count++;
-                }
-            }
+                    for (j = arr.length - 1; j >= 0; j--) {
+                        if ((j >= i) && (arr[i] + arr[j]) <= 135) {
+                            i++;
+                            count++;
+                        } else if ((j >= i) && arr[j] <= 135) {
+                            count++;
+                        }
+                    }
 
-        }
         return count;
+        }
     }
-}
